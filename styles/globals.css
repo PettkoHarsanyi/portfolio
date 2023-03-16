@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -15,12 +19,20 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@font-face {
+  font-family: "burtons";
+  src: url("../public/Burtons.otf");
+}
+
+.cards{
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+  opacity: 0.5;
+  border: 0.5rem;
+}
+
+.cards:hover{
+  box-shadow: 0 0 2rem 0.2rem #ffa500;
+  border: none;
+  opacity: 1;
 }
