@@ -3,10 +3,23 @@ import Link from "next/link";
 import { useState } from "react";
 import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { isDark } from "../store/selector";
+import { getLang, isDark } from "../store/selector";
+import { HU, GB } from 'country-flag-icons/react/3x2'
+import png1 from "../public/kartografusok/1.png"
+import png2 from "../public/kartografusok/2.png"
+import png3 from "../public/kartografusok/3.png"
+import png4 from "../public/kartografusok/4.png"
+import png5 from "../public/kartografusok/5.png"
+import png6 from "../public/kartografusok/6.png"
+import png14 from "../public/kartografusok/14.png"
+import png21 from "../public/kartografusok/21.png"
+import png17 from "../public/kartografusok/17.png"
+import png19 from "../public/kartografusok/19.png"
+import Image from "next/image"
 
 export default function Kartografusok() {
     const darkMode = useSelector(isDark);
+    const lang = useSelector(getLang);
     const dispatch = useDispatch();
 
     return (
@@ -38,6 +51,13 @@ export default function Kartografusok() {
                                     }} className='cursor-pointer text-2xl lg:text-3xl text-gray-800' />
                                 }
                             </li>
+                            <li>
+                                {lang === "ENG" ?
+                                    <HU title='Váltás magyarra' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
+                                    :
+                                    <GB title='Change to english' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
+                                }
+                            </li>
                         </ul>
                     </nav>
 
@@ -60,13 +80,51 @@ export default function Kartografusok() {
                         <div className="bg-yellow-300 row-span-2"></div>
                     </div> */}
 
-                    <div className="grid grid-cols-8 grid-rows-4 center mx-auto gap-10 h-screen w-9/12 center mx-auto">
-                        <div className="col-span-5 row-span-1 bg-gray-200 rounded-3xl"></div>
-                        <div className="col-span-3 row-span-1 bg-gray-300 rounded-3xl"></div>
-                        <div className="col-span-4 row-span-2 bg-gray-400 rounded-3xl"></div>
-                        <div className="col-span-2 row-span-1 bg-gray-500 rounded-3xl"></div>
-                        <div className="col-span-2 row-span-1 bg-gray-600 rounded-3xl"></div>
-                        <div className="col-span-4 row-span-2 bg-gray-700 rounded-3xl"></div>
+                    <div className="grid grid-cols-8 pb-10 center mx-auto gap-10 w-9/12 grid-flow-row-dense center">
+
+                        <div className="md:col-span-5 col-span-8 dark:bg-orange-50  bg-sky-600 rounded-3xl p-10">
+                            <h3 className="text-2xl md:text-2xl mb-5 lg:text-4xl text-gray-800 font-burtons">Kartográfusok</h3>
+                            <p className="text-lg md:text-lg lg:text-xl">I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in
+                                NestJs, my frontend which is ReactJs, and SocketIO.</p>
+                        </div>
+                        <div className="md:col-span-3 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl">asdasd</div>
+
+                        {/* ELSŐ SOR */}
+                        <div className="xl:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl overflow-hidden relative">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png1} className="object-cover h-full" />
+                        </div>
+
+                        <div className="xl:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl overflow-hidden relative">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png17} className="object-cover h-full" />
+                        </div>
+
+                        
+                        {/* MÁSODIK SOR */}
+                        <div className="xl:col-span-2 sm:col-span-4 col-span-8 row-span-1 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png2} className="object-cover h-full md:w-full" />
+                        </div>
+
+                        <div className="xl:col-span-3 sm:col-span-4 col-span-8 row-span-2 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png19} className="object-cover md:w-full h-full " />
+                        </div>
+
+                        {/* <div className="xl:col-span-3 sm:col-span-4 col-span-8 row-span-2 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png14} className="object-cover md:h-full w-full" />
+                        </div> */}
+
+
+                        {/* <div className="dark:bg-orange-300 bg-sky-900 rounded-3xl">a</div>
+                        <div className="dark:bg-orange-300 bg-sky-900 rounded-3xl">a</div>
+                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
+                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
+                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
+                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div> */}
+
                     </div>
                 </section>
 

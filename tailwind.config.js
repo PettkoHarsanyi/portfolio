@@ -18,9 +18,11 @@ module.exports = {
         card: "0 0 2rem 0.2rem",
         hoveredCardDark: "0 0 1rem 0.5rem #fb923c",
         hoveredCardLight: "0 0 1rem 0.5rem #0c4a6e",
+        innerShadow: "inset 0 0 2rem 1rem #f8a100"
       },
       height:{
-        500: "500px"
+        500: "500px",
+        112: "28rem"
       }
     },
   },

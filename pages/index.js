@@ -14,11 +14,13 @@ import web5 from "../public/web5.png"
 import { useState } from 'react'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
-import { isDark } from '../store/selector'
+import { getLang, isDark } from '../store/selector'
+import { HU, GB } from 'country-flag-icons/react/3x2'
 
 export default function Home() {
 
   const darkMode = useSelector(isDark);
+  const lang = useSelector(getLang);
   const dispatch = useDispatch();
 
   return (
@@ -37,26 +39,40 @@ export default function Home() {
               <li>
                 {darkMode ?
                   <BsFillSunFill onClick={() => {
-                    dispatch({type:"CHANGE_DARKNESS"})
+                    dispatch({ type: "CHANGE_DARKNESS" })
                   }} className='cursor-pointer text-2xl lg:text-3xl text-white' />
                   :
                   <BsFillMoonFill onClick={() => {
-                    dispatch({type:"CHANGE_DARKNESS"})
+                    dispatch({ type: "CHANGE_DARKNESS" })
                   }} className='cursor-pointer text-2xl lg:text-3xl text-gray-800' />
                 }
               </li>
-              <li><a className='text-lg md:text-xl lg:text-2xl dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-400 text-white px-4 py-2 rounded-md ml-8 bg-gradient-to-r from-sky-900 to-sky-800' href='#'>Resume</a></li>
+              <li>
+                {lang === "ENG" ?
+                  <HU title='Váltás magyarra' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
+                  :
+                  <GB title='Change to english' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
+                }
+              </li>
+              <li>
+                <a href={lang === "ENG" ? "ENG_PETER_HARSANYI_CV.pdf" : 'HUN_HARSANYI_PETER_CV.pdf'} download={lang === "ENG" ? "ENG_PETER_HARSANYI_CV" : "HUN_HARSANYI_PETER_CV"} className='text-lg md:text-xl lg:text-2xl dark:bg-gradient-to-r dark:from-orange-500 dark:to-orange-400 text-white px-4 py-2 rounded-md ml-8 bg-gradient-to-r from-sky-900 to-sky-800' >
+                  {lang === "ENG" ? "Resume" : "Önéletrajz"}
+                </a>
+              </li>
             </ul>
           </nav>
           <div className="mx-auto rounded-full w-40 h-40 relative overflow-hidden mb-10 md:h-60 md:w-60 lg:h-72 lg:w-72">
             <Image alt='Picture of me' src={me} style={{ objectFit: "cover" }} />
           </div>
           <div className='text-center justify-center'>
-            <h2 className='text-4xl py-2 dark:text-orange-500 font-medium md:text-5xl lg:text-6xl text-sky-900'>Harsányi Péter</h2>
-            <h3 className='text-2xl lg:text-3xl py-2 dark:text-gray-300 text-gray-800'>Software developer.</h3>
+            <h2 className='text-4xl py-2 dark:text-orange-500 font-medium md:text-5xl lg:text-6xl text-sky-900'>{lang === "ENG" ? "Péter Harsanyi" : "Harsányi Péter"}</h2>
+            <h3 className='text-2xl lg:text-3xl py-2 dark:text-gray-300 text-gray-800'>{lang === "ENG" ? "Software developer." : "Szoftverfejlesztő"}</h3>
             <p className='text-xl md:text-2xl py-5 leading-8 dark:text-gray-400  max-w-lg mx-auto text-gray-700'>
-              I just completed my bachelor's degree at Eötvös Lóránd University, where I studied as a software developer.
-              My strength is building applications on the web. I'm a visual one, so I prefer front-end, but in general I am not afraid of back-end or full-stack works either.
+              {lang === "ENG" ?
+                "I just completed my bachelor's degree at Eötvös Lóránd University, where I studied as a software developer. My strength is building applications on the web. I'm a visual one, so I prefer front-end, but in general I am not afraid of back-end or full-stack works either."
+                :  
+                "Egy friss BSc diplomás fejlesztő vagyok, aki szoftverfejlesztőként tanult az egyetemen. Az erősségeim közé tartozik webes alkalmazások fejlesztése. Vizuális típus vagyok, tehát a front-end felé hajlok, de nem ijedek meg sem back-end, sem a full-stack projectekben való részvételtől sem."
+            }
             </p>
           </div>
           <div className='text-5xl flex justify-center gap-16 py-3 dark:text-gray-600'>
@@ -75,7 +91,7 @@ export default function Home() {
         <section>
           <div>
             <h3 className='text-2xl lg:text-3xl pt-10 dark:text-gray-300'>Portfolio</h3>
-            <p className='text-xl md:text-2xl py-2 leading-8 dark:text-gray-400'>Here are some of my projects that I've built myself during university studies.</p>
+            <p className='text-xl md:text-2xl py-2 leading-8 dark:text-gray-400'>{lang==="ENG"?"Here are some of my projects that I've built myself during university studies.":"Néhány projectem, amit az egyetemi tanulmányaim alatt készítettem el."}</p>
           </div>
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
             <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/kartografusok"><Image priority alt='Picture of the game "Cartographers"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={kartografusok} /></Link></div>
