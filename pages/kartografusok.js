@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill, BsFullscreenExit, BsThreeDots } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { getLang, isDark } from "../store/selector";
 import { HU, GB } from 'country-flag-icons/react/3x2'
@@ -11,10 +11,21 @@ import png3 from "../public/kartografusok/3.png"
 import png4 from "../public/kartografusok/4.png"
 import png5 from "../public/kartografusok/5.png"
 import png6 from "../public/kartografusok/6.png"
+import png7 from "../public/kartografusok/7.png"
+import png8 from "../public/kartografusok/8.png"
+import png9 from "../public/kartografusok/9.png"
+import png10 from "../public/kartografusok/10.png"
+import png11 from "../public/kartografusok/11.png"
+import png12 from "../public/kartografusok/12.png"
+import png13 from "../public/kartografusok/13.png"
 import png14 from "../public/kartografusok/14.png"
-import png21 from "../public/kartografusok/21.png"
+import png15 from "../public/kartografusok/15.png"
+import png16 from "../public/kartografusok/16.png"
 import png17 from "../public/kartografusok/17.png"
+import png18 from "../public/kartografusok/18.png"
 import png19 from "../public/kartografusok/19.png"
+import png20 from "../public/kartografusok/20.png"
+import png21 from "../public/kartografusok/21.png"
 import Image from "next/image"
 
 export default function Kartografusok() {
@@ -80,51 +91,191 @@ export default function Kartografusok() {
                         <div className="bg-yellow-300 row-span-2"></div>
                     </div> */}
 
-                    <div className="grid grid-cols-8 pb-10 center mx-auto gap-10 w-9/12 grid-flow-row-dense center">
+                    {/* grid-flow-row-dense */}
 
-                        <div className="md:col-span-5 col-span-8 dark:bg-orange-50  bg-sky-600 rounded-3xl p-10">
+                    <div className="grid grid-cols-8 grid-rows-1 h-min pb-10 center mx-auto gap-10 lg:w-9/12 w-11/12 center">
+                        <div className="lg:col-span-5 col-span-8 dark:bg-orange-50 bg-sky-600 rounded-3xl p-10 flex flex-col justify-center shadow-card">
                             <h3 className="text-2xl md:text-2xl mb-5 lg:text-4xl text-gray-800 font-burtons">Kartográfusok</h3>
-                            <p className="text-lg md:text-lg lg:text-xl">I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in
-                                NestJs, my frontend which is ReactJs, and SocketIO.</p>
+                            <p className="text-lg md:text-lg lg:text-xl">{lang === "ENG" ? <p>I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in NestJs, my frontend which is ReactJs, and SocketIO.</p> : <p>Ezt a projektet az egyetemen, szakmai dolgozatként csináltam. Az alkalmazás három részre oszlik, front-enden ReactJs működik, back-enden NestJs, a kapcsolatért pedig SocketIO felel. A grafikai elemeket (kártyák, térkép) nem én hoztam létre, viszont minden más a saját munkám.</p>}</p>
                         </div>
-                        <div className="md:col-span-3 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl">asdasd</div>
-
-                        {/* ELSŐ SOR */}
-                        <div className="xl:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl overflow-hidden relative">
-                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image src={png1} className="object-cover h-full" />
+                        <div className="lg:col-span-3 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl flex flex-col justify-between p-5 shadow-card">
+                            <div><BsThreeDots className="text-4xl" /></div>
+                            <div className=""></div>
+                            <div className="font-burtons text-2xl">{lang === "ENG" ? <p>Documentation</p> : <p>Dokumentáció</p>}</div>
                         </div>
+                    </div>
 
-                        <div className="xl:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl overflow-hidden relative">
-                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image src={png17} className="object-cover h-full" />
-                        </div>
 
-                        
-                        {/* MÁSODIK SOR */}
-                        <div className="xl:col-span-2 sm:col-span-4 col-span-8 row-span-1 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                    <div className="grid grid-cols-8 auto-rows-[300px] grid-flow-dense pb-10 mx-auto gap-10 lg:w-9/12 w-11/12 center content-between">
+
+                        {/* ELSŐ */}
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image src={png2} className="object-cover h-full md:w-full" />
+                            <Image src={png1} className="object-cover h-full " />
                         </div>
 
-                        <div className="xl:col-span-3 sm:col-span-4 col-span-8 row-span-2 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image src={png19} className="object-cover md:w-full h-full " />
+                            <Image src={png17} className="object-cover h-full " />
                         </div>
 
-                        {/* <div className="xl:col-span-3 sm:col-span-4 col-span-8 row-span-2 dark:bg-orange-200 bg-sky-800 rounded-3xl overflow-hidden relative">
+                        {/* MÁSODIK */}
+                        <div className="2xl:col-span-3 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image src={png14} className="object-cover md:h-full w-full" />
+                            <Image src={png2} className="object-cover h-full w-full object-top" />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-200 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic">{lang === "ENG" ? <p>Unfortunatelly, I can't host the game since I don't have the rights for that. The pictures show the content of the game. Some of my other projects, that are my own idea can be and are hosted.</p> : <p>Sajnos a játékot nem oszthatom meg, mert a szerzői jog a kiadót illeti, viszont itt van néhány kép a játékból. A többi projektemet, ami a saját ötletem volt, azokat megosztottam.</p>}</div>
+                        </div>
+
+                        <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png19} className="h-full w-full object-cover" />
+                        </div>
+
+                        {/* HARMADIK */}
+                        <div className="2xl:col-span-4 xl:col-span-3 xl:col-start-2 col-start-1 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png14} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl italic">
+                                {lang === "ENG" ? <p>The site can be used even as a guest, but there is also a registration option. I included this feature so that players can compete on the leaderboard.</p> : <p>Az oldalt lehet használni vendégként, de van regisztrációs lehetőség is. Ezt azért vittem bele, hogy a játékosok versenyezni tudjanak a ranglétrán.</p>}</div>
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 xl:col-start-2 sm:col-span-4 col-start-1 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png4} className="h-full w-full object-cover" />
+                        </div>
+
+
+
+                        {/* NEGYEDIK */}
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl italic">
+                                {lang === "ENG" ? <p>There is an administration panel available, where all player data can be modified, and new levels and certain game cards can be created and deleted.</p> : <p>Van egy adminisztrációs panel is, ahol módosítani lehet az összes játékos adatait, ezenkívül lehet létrehozni és törölni új pályákat, illetve bizonyos, játékban szereplő kártyákat is.</p>}</div>
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png5} className="object-cover h-full " />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-4 lg:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png8} className="h-full w-full object-cover" />
+                        </div>
+
+                        {/* ÖTÖDIK */}
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png7} className="object-cover h-full " />
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png9} className="object-cover h-full " />
+                        </div>
+
+                        {/* HATODIK */}
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png10} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-5 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png3} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png6} className="object-cover h-full " />
+                        </div>
+
+                        {/* HETEDIK */}
+                        <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png11} className="object-cover h-full " />
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-5 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png12} className="object-cover h-full " />
+                        </div>
+
+                        {/* NYOLCAS */}
+                        <div className="2xl:col-span-2 xl:col-span-3 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png13} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-5 col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png15} className="object-cover h-full " />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl italic">
+                                {lang === "ENG" ? "" : <p>Ha játszani szeretnénk a barátainkkal, akkor egy szoba létrehozása után a szobakódra lesz szükségük. Ezt a socketIO generálja. A kód beírásával csatlakozhatnak a szobánkba. Itt lehet chatelni.</p>}</div>
+                        </div>
+
+                        {/* KILENCES */}
+                        <div className="2xl:col-span-4 xl:col-span-4  col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png16} className="object-cover h-full " />
+                        </div>
+
+                        <div className="2xl:col-span-4 xl:col-span-4  col-span-8 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png17} className="object-cover h-full " />
+                        </div>
+
+                        {/* TIZES */}
+                        <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 2xl:row-span-2 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png19} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-3 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png18} className="h-full w-full object-cover lg:object-left xl:object-center sm:object-left object-center" />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl italic">
+                                {lang === "ENG" ? "" : <p>Amint a játék elindult, továbbra is lehet chatelni. Rajzolni kell, tetrisezni és építgetni. Ne felejtsük el, hogy kicsit kiszúrni sem ítélendő az ellenfeleinkkel.</p>}</div>
+                        </div>
+
+                        <div className="2xl:col-span-5 xl:col-span-3 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png21} className="object-cover h-full xl:object-left object-center" />
+                        </div>
+
+                        {/* TIZENEGYES */}
+
+                        <div className="2xl:col-span-2 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
+                            <div className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
+                            <Image src={png20} className="h-full w-full object-cover" />
+                        </div>
+
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl italic text-center">
+                                {lang === "ENG" ? <p>Publisher:</p> : <p>Kiadó:</p>}
+                                <p>Thunderwork Games</p>
+                                <br />
+                                <p>Designer:</p>
+                                <p>Jordy Adan</p>
+                            </div>
+
+                        </div>
+
+                        {/* <div className="md:col-span-2 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="text-lg md:text-lg lg:text-xl italic">
+                                {lang==="ENG"?"":""}</div>
                         </div> */}
-
-
-                        {/* <div className="dark:bg-orange-300 bg-sky-900 rounded-3xl">a</div>
-                        <div className="dark:bg-orange-300 bg-sky-900 rounded-3xl">a</div>
-                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
-                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
-                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div>
-                        <div className="dark:bg-orange-200 bg-sky-800 rounded-3xl">a</div> */}
-
                     </div>
                 </section>
 
