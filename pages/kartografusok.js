@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill, BsFullscreenExit, BsThreeDots } from "react-icons/bs";
+import { RxDot, RxDotFilled } from "react-icons/rx";
 import { useDispatch, useSelector } from "react-redux";
 import { getLang, isDark } from "../store/selector";
 import { HU, GB } from 'country-flag-icons/react/3x2'
@@ -27,11 +28,25 @@ import png19 from "../public/kartografusok/19.png"
 import png20 from "../public/kartografusok/20.png"
 import png21 from "../public/kartografusok/21.png"
 import Image from "next/image"
+import Slider from "react-slick";
+import jatek from "../public/kartografusok/jatek.png"
+import viewer from "../public/kartografusok/viewer.png"
+import dokumentacio from "../public/kartografusok/dokumentacio.png"
+import Carousel from "nuka-carousel/lib/carousel";
+
 
 export default function Kartografusok() {
     const darkMode = useSelector(isDark);
     const lang = useSelector(getLang);
     const dispatch = useDispatch();
+
+    const makeOpal = (index) => {
+        const element = document.getElementById("opaltext" + index);
+        // console.log(element.className);
+        // element.classList.add("opaltext-100")
+        // console.log(element.className);
+        // element.className = {...element.className, };
+    }
 
     return (
         <div className={darkMode ? "dark" : ""}>
@@ -72,37 +87,83 @@ export default function Kartografusok() {
                         </ul>
                     </nav>
 
-                    {/* <div className="flex mb-10 w-9/12 center mx-auto gap-10">
-                        <div className="w-2/3 bg-gray-500 h-60 rounded-3xl"></div>
-                        <div className="w-1/3 bg-gray-400 h-60 rounded-3xl"></div>
-                    </div>
-                    <div className="flex mb-4 w-9/12 center mx-auto gap-10">
-                        <div className="w-1/2 bg-gray-500 h-96 rounded-3xl"></div>
-                        <div className="w-1/2 h-96 rounded-3xl flex gap-10">
-                            <div className="w-1/2 bg-gray-500 h-60 rounded-3xl"></div>
-                            <div className="w-1/2 bg-gray-400 h-60 rounded-3xl"></div>
-                        </div>
-                    </div> */}
 
-                    {/* <div className="grid grid-cols-8 gap-4">
-                        <div className="bg-blue-300 col-span-6 row-span-2">a</div>
-                        <div className="bg-red-300 col-span-2 row-span-2"></div>
-                        <div className="bg-green-300 col-span-4 row-span-4"></div>
-                        <div className="bg-yellow-300 row-span-2"></div>
-                    </div> */}
-
-                    {/* grid-flow-row-dense */}
-
-                    <div className="grid grid-cols-8 grid-rows-1 h-min pb-10 center mx-auto gap-10 lg:w-9/12 w-11/12 center">
-                        <div className="lg:col-span-5 col-span-8 dark:bg-orange-50 bg-sky-600 rounded-3xl p-10 flex flex-col justify-center shadow-card">
+                    <div className="grid grid-cols-10 grid-rows-1 pb-10 center mx-auto gap-10 lg:w-9/12 w-11/12 center">
+                        <div className="lg:col-span-6 md:col-span-10 col-span-10 h-[18rem] dark:bg-orange-50 bg-sky-300 rounded-3xl p-10 flex flex-col justify-center shadow-card">
                             <h3 className="text-2xl md:text-2xl mb-5 lg:text-4xl text-gray-800 font-burtons">Kartográfusok</h3>
-                            <p className="text-lg md:text-lg lg:text-xl">{lang === "ENG" ? <p>I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in NestJs, my frontend which is ReactJs, and SocketIO.</p> : <p>Ezt a projektet az egyetemen, szakmai dolgozatként csináltam. Az alkalmazás három részre oszlik, front-enden ReactJs működik, back-enden NestJs, a kapcsolatért pedig SocketIO felel. A grafikai elemeket (kártyák, térkép) nem én hoztam létre, viszont minden más a saját munkám.</p>}</p>
+                            {lang === "ENG" ? <p className="text-lg md:text-lg lg:text-xl">I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in NestJs, my frontend which is ReactJs, and SocketIO.</p> : <p className="text-md md:text-lg lg:text-xl">Ezt a projektet az egyetemen, szakmai dolgozatként csináltam. Az alkalmazás három részre oszlik, front-enden ReactJs működik, back-enden NestJs, a kapcsolatért pedig SocketIO felel. A grafikai elemeket (kártyák, térkép) nem én hoztam létre, viszont minden más a saját munkám.</p>}
                         </div>
-                        <div className="lg:col-span-3 col-span-8 dark:bg-orange-100 bg-sky-700 rounded-3xl flex flex-col justify-between p-5 shadow-card">
+
+                        <div className="lg:col-span-4 md:col-span-6 md:col-start-3 sm:col-span-8 sm:col-start-2   col-span-10 h-[18rem]" >
+                            <Carousel wrapAround={true} autoplay={true} autoplayInterval={3000} className="rounded-3xl h-[18rem]"
+                                defaultControlsConfig={{
+                                    pagingDotsStyle: {
+                                        fill: "gray",
+                                        gap: "5rem"
+                                    }
+                                }}
+                                afterSlide={(index) => { makeOpal(index); console.log(index) }}
+                                renderCenterRightControls={({ nextDisabled, nextSlide }) => (
+                                    <button onClick={nextSlide} disabled={nextDisabled}>
+                                    </button>
+                                )}
+                                renderCenterLeftControls={({ previousDisabled, previousSlide }) => (
+                                    <button onClick={previousSlide} disabled={previousDisabled}>
+                                    </button>
+                                )}
+                                renderBottomCenterControls={({ currentSlide, goToSlide }) => (
+                                    <div className="flex gap-5">
+                                        <button onClick={() => goToSlide(0)}>{currentSlide === 0 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
+                                        <button onClick={() => goToSlide(1)}>{currentSlide === 1 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
+                                        <button onClick={() => goToSlide(2)}>{currentSlide === 2 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
+                                    </div>
+                                )}
+                            >
+                                <div className="relative">
+                                    <div id="opaltext0" className="opaltext text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                        <p className="font-burtons text-white text-3xl">
+                                            {lang === "ENG" ? "Try out the game: " : "Próbáld ki a játékot: "}
+                                        </p>
+                                        <div className="text-2xl font-burtons cursor-not-allowed bg-red-700 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-red-200">
+                                            {lang === "ENG" ? <p>unavailable</p> : <p>nem elérhetö</p>}
+                                        </div>
+                                    </div>
+                                    <Image src={jatek} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                </div>
+                                <div className="relative">
+                                    <div id="opaltext1" className="opaltext text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                        <p className="font-burtons text-white text-3xl lg:text-3xl md:text-xl ">
+
+                                            {lang === "ENG" ? "Download the documentation: ": "Töltsd le a dokumentációt:"}
+
+                                        </p>
+                                        <div className="text-2xl md:text-xl lg:text-2xl font-burtons cursor-pointer bg-green-600 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
+                                            {lang === "ENG" ? <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx" >download</a> : <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx">letöltés</a>}
+                                        </div>
+                                    </div>
+                                    <Image src={dokumentacio} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                </div>
+                                <div className="relative">
+                                    <div id="opaltext2" className="opaltext text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                        <p className="font-burtons text-white text-3xl">
+
+                                            {lang === "ENG" ? "Watch the pictures: " : "Nézd meg a képeket: "}
+
+                                        </p>
+                                        <div className="text-2xl font-burtons cursor-pointer bg-gray-400 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
+                                            {lang === "ENG" ? <p>click</p> : <p>kattints</p>}
+                                        </div>
+                                    </div>
+                                    <Image src={viewer} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                </div>
+                            </Carousel>
+                        </div>
+
+                        {/* <div className="lg:col-span-3 col-span-8 dark:bg-orange-100 bg-sky-200 rounded-3xl flex flex-col justify-between p-5 shadow-card">
                             <div><BsThreeDots className="text-4xl" /></div>
                             <div className=""></div>
                             <div className="font-burtons text-2xl">{lang === "ENG" ? <p>Documentation</p> : <p>Dokumentáció</p>}</div>
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -125,8 +186,8 @@ export default function Kartografusok() {
                             <Image src={png2} className="object-cover h-full w-full object-top" />
                         </div>
 
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-200 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg italic">{lang === "ENG" ? <p>Unfortunatelly, I can't host the game since I don't have the rights for that. The pictures show the content of the game. Some of my other projects, that are my own idea can be and are hosted.</p> : <p>Sajnos a játékot nem oszthatom meg, mert a szerzői jog a kiadót illeti, viszont itt van néhány kép a játékból. A többi projektemet, ami a saját ötletem volt, azokat megosztottam.</p>}</div>
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-200 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">{lang === "ENG" ? <p>Unfortunatelly, I can't host the game since I don't have the rights for that. The pictures show the content of the game. Some of my other projects, that are my own idea can be and are hosted.</p> : <p>Sajnos a játékot nem oszthatom meg, mert a szerzői jog a kiadót illeti, viszont itt van néhány kép a játékból. A többi projektemet, ami a saját ötletem volt, azokat megosztottam.</p>}</div>
                         </div>
 
                         <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
@@ -140,8 +201,8 @@ export default function Kartografusok() {
                             <Image src={png14} className="h-full w-full object-cover" />
                         </div>
 
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg lg:text-xl italic">
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-200 bg-sky-100 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">
                                 {lang === "ENG" ? <p>The site can be used even as a guest, but there is also a registration option. I included this feature so that players can compete on the leaderboard.</p> : <p>Az oldalt lehet használni vendégként, de van regisztrációs lehetőség is. Ezt azért vittem bele, hogy a játékosok versenyezni tudjanak a ranglétrán.</p>}</div>
                         </div>
 
@@ -153,8 +214,8 @@ export default function Kartografusok() {
 
 
                         {/* NEGYEDIK */}
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg lg:text-xl italic">
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-200 bg-sky-100 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">
                                 {lang === "ENG" ? <p>There is an administration panel available, where all player data can be modified, and new levels and certain game cards can be created and deleted.</p> : <p>Van egy adminisztrációs panel is, ahol módosítani lehet az összes játékos adatait, ezenkívül lehet létrehozni és törölni új pályákat, illetve bizonyos, játékban szereplő kártyákat is.</p>}</div>
                         </div>
 
@@ -217,8 +278,8 @@ export default function Kartografusok() {
                             <Image src={png15} className="object-cover h-full " />
                         </div>
 
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg lg:text-xl italic">
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">
                                 {lang === "ENG" ? "" : <p>Ha játszani szeretnénk a barátainkkal, akkor egy szoba létrehozása után a szobakódra lesz szükségük. Ezt a socketIO generálja. A kód beírásával csatlakozhatnak a szobánkba. Itt lehet chatelni.</p>}</div>
                         </div>
 
@@ -244,8 +305,8 @@ export default function Kartografusok() {
                             <Image src={png18} className="h-full w-full object-cover lg:object-left xl:object-center sm:object-left object-center" />
                         </div>
 
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg lg:text-xl italic">
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">
                                 {lang === "ENG" ? "" : <p>Amint a játék elindult, továbbra is lehet chatelni. Rajzolni kell, tetrisezni és építgetni. Ne felejtsük el, hogy kicsit kiszúrni sem ítélendő az ellenfeleinkkel.</p>}</div>
                         </div>
 
@@ -261,8 +322,8 @@ export default function Kartografusok() {
                             <Image src={png20} className="h-full w-full object-cover" />
                         </div>
 
-                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-700 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg lg:text-xl italic text-center">
+                        <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 lg:col-start-3 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
+                            <div className="2xl:text-lg lg:text-xl text-lg italic text-center">
                                 {lang === "ENG" ? <p>Publisher:</p> : <p>Kiadó:</p>}
                                 <p>Thunderwork Games</p>
                                 <br />
@@ -280,6 +341,6 @@ export default function Kartografusok() {
                 </section>
 
             </main>
-        </div>
+        </div >
     )
 }

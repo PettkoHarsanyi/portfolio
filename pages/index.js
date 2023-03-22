@@ -65,7 +65,7 @@ export default function Home() {
             <Image alt='Picture of me' src={me} style={{ objectFit: "cover" }} />
           </div>
           <div className='text-center justify-center'>
-            <h2 className='text-4xl py-2 dark:text-orange-500 font-medium md:text-5xl lg:text-6xl text-sky-900'>{lang === "ENG" ? "Péter Harsanyi" : "Harsányi Péter"}</h2>
+            <h2 className='text-4xl py-2 dark:text-orange-500 font-medium md:text-5xl lg:text-6xl text-sky-900'>{lang === "ENG" ? "Péter Harsányi" : "Harsányi Péter"}</h2>
             <h3 className='text-2xl lg:text-3xl py-2 dark:text-gray-300 text-gray-800'>{lang === "ENG" ? "Software developer." : "Szoftverfejlesztő"}</h3>
             <p className='text-xl md:text-2xl py-5 leading-8 dark:text-gray-400  max-w-lg mx-auto text-gray-700'>
               {lang === "ENG" ?

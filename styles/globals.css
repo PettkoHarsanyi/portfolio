@@ -36,3 +36,20 @@ a {
   border: none;
   opacity: 1;
 }
+
+.opaltext{
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.slide-visible.slide-current .opaltext{
+  opacity: 1;
+}
+
+.prev-cloned .opaltext{
+  opacity: 1;
+}
+
+.next-cloned .opaltext{
+  opacity: 1;
+}
