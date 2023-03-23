@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
+    "@mui/material": "^5.11.14",
     "@reduxjs/toolkit": "^1.9.3",
     "country-flag-icons": "^1.5.6",
     "flickity": "^2.3.0",
+    "flowbite": "^1.6.4",
     "next": "13.2.4",
     "next-redux-wrapper": "^8.1.0",
     "nuka-carousel": "^5.5.1",
@@ -21,6 +27,7 @@
     "react-flickity-component": "^4.0.5",
     "react-icons": "^4.8.0",
     "react-image-gallery": "^1.2.11",
+    "react-photo-view": "^1.2.3",
     "react-redux": "^8.0.5",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",

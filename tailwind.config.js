@@ -5,26 +5,26 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
- 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         burtons: "burtons",
       },
-      boxShadow:{
+      boxShadow: {
         card: "0 0 2rem 0.2rem",
         hoveredCardDark: "0 0 1rem 0.5rem #fb923c",
         hoveredCardLight: "0 0 1rem 0.5rem #0c4a6e",
         innerShadow: "inset 0 0 2rem 1rem #f8a100"
       },
-      height:{
+      height: {
         500: "500px",
         112: "28rem"
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }

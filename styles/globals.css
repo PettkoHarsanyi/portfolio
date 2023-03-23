@@ -37,11 +37,21 @@ a {
   opacity: 1;
 }
 
-.opaltext{
+.opaltext0{
   opacity: 0;
   transition: all 0.5s;
 }
 
+.opaltext1{
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.opaltext2{
+  opacity: 0;
+  transition: all 0.5s;
+}
+/*
 .slide-visible.slide-current .opaltext{
   opacity: 1;
 }
@@ -52,4 +62,26 @@ a {
 
 .next-cloned .opaltext{
   opacity: 1;
+} */
+
+.show {
+  opacity: 1;
+}
+
+.animate{
+  -webkit-animation-name: opacityAnimation;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation: opacityAnimation 0.5s ease-in-out backwards;
+}
+
+@-webkit-keyframes opacityAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
