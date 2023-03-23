@@ -28,12 +28,11 @@ import png19 from "../public/kartografusok/19.png"
 import png20 from "../public/kartografusok/20.png"
 import png21 from "../public/kartografusok/21.png"
 import Image from "next/image"
-import Slider from "react-slick";
 import jatek from "../public/kartografusok/jatek.png"
 import viewer from "../public/kartografusok/viewer.png"
 import dokumentacio from "../public/kartografusok/dokumentacio.png"
 import Carousel from "nuka-carousel/lib/carousel";
-import { PhotoProvider, PhotoSlider, PhotoView } from "react-photo-view";
+import { PhotoSlider } from "react-photo-view";
 import 'react-photo-view/dist/react-photo-view.css';
 
 export default function Kartografusok() {
@@ -48,13 +47,11 @@ export default function Kartografusok() {
     const makeOpal = (index) => {
         var otherElements1 = document.getElementsByClassName("opaltext")
         for (let item of otherElements1) {
-            console.log(item);
             item.classList.remove("show")
         }
 
         var elements = document.getElementsByClassName("opaltext" + index)
         for (let item of elements) {
-            console.log(item);
             item.classList.add("show")
         }
     }
@@ -152,7 +149,7 @@ export default function Kartografusok() {
                                             {lang === "ENG" ? <p>unavailable</p> : <p>nem elérhetö</p>}
                                         </div>
                                     </div>
-                                    <Image src={jatek} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" priority src={jatek} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                                 <div className="relative">
                                     <div className="opaltext opaltext1 text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
@@ -165,7 +162,7 @@ export default function Kartografusok() {
                                             {lang === "ENG" ? <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx" >download</a> : <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx">letöltés</a>}
                                         </div>
                                     </div>
-                                    <Image src={dokumentacio} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={dokumentacio} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                                 <div className="relative">
                                     <div className="opaltext opaltext2 text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
@@ -175,10 +172,10 @@ export default function Kartografusok() {
 
                                         </p>
                                         <div className="text-2xl font-burtons cursor-pointer bg-gray-400 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
-                                            {lang === "ENG" ? <button onClick={() => {setIndex(0);setVisible(true)}}>click</button> : <button>kattints</button>}
+                                            {lang === "ENG" ? <button onClick={() => {setIndex(0);setVisible(true)}}>click</button> : <button onClick={() => {setIndex(0);setVisible(true)}}>kattints</button>}
                                         </div>
                                     </div>
-                                    <Image src={viewer} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={viewer} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                             </Carousel>
                         </div>
@@ -196,20 +193,20 @@ export default function Kartografusok() {
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black z-10"></div>
                             {/* <PhotoView src="kartografusok/1.png"> */}
-                            <Image onClick={() => { setIndex(0); setVisible(true) }} src={png1} className="cursor-pointer object-cover h-full z-0" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(0); setVisible(true) }} src={png1} className="cursor-pointer object-cover h-full z-0" />
                             {/* </PhotoView> */}
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(16); setVisible(true) }} src={png17} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(16); setVisible(true) }} src={png17} className="cursor-pointer object-cover h-full " />
 
                         </div>
 
                         {/* MÁSODIK */}
                         <div className="2xl:col-span-3 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(1); setVisible(true) }} src={png2} className="cursor-pointer object-cover h-full w-full object-top" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(1); setVisible(true) }} src={png2} className="cursor-pointer object-cover h-full w-full object-top" />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-200 rounded-3xl flex flex-col justify-center p-5 shadow-card">
@@ -218,13 +215,13 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(18); setVisible(true) }} src={png19} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(18); setVisible(true) }} src={png19} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         {/* HARMADIK */}
                         <div className="2xl:col-span-4 xl:col-span-3 xl:col-start-2 col-start-1 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(13); setVisible(true) }} src={png14} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(13); setVisible(true) }} src={png14} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-200 bg-sky-100 rounded-3xl flex flex-col justify-center p-5 shadow-card">
@@ -234,7 +231,7 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 xl:col-start-2 sm:col-span-4 col-start-1 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(3); setVisible(true) }} src={png4} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(3); setVisible(true) }} src={png4} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
 
@@ -247,61 +244,61 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(4); setVisible(true) }} src={png5} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(4); setVisible(true) }} src={png5} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-4 lg:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(7); setVisible(true) }} src={png8} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(7); setVisible(true) }} src={png8} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         {/* ÖTÖDIK */}
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(6); setVisible(true) }} src={png7} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(6); setVisible(true) }} src={png7} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(8); setVisible(true) }} src={png9} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(8); setVisible(true) }} src={png9} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         {/* HATODIK */}
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(9); setVisible(true) }} src={png10} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(9); setVisible(true) }} src={png10} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-5 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(2); setVisible(true) }} src={png3} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(2); setVisible(true) }} src={png3} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(5); setVisible(true) }} src={png6} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(5); setVisible(true) }} src={png6} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         {/* HETEDIK */}
                         <div className="2xl:col-span-4 xl:col-span-4 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(10); setVisible(true) }} src={png11} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(10); setVisible(true) }} src={png11} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-5 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(11); setVisible(true) }} src={png12} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(11); setVisible(true) }} src={png12} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         {/* NYOLCAS */}
                         <div className="2xl:col-span-2 xl:col-span-3 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(12); setVisible(true) }} src={png13} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(12); setVisible(true) }} src={png13} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-5 col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(14); setVisible(true) }} src={png15} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(14); setVisible(true) }} src={png15} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
@@ -312,23 +309,23 @@ export default function Kartografusok() {
                         {/* KILENCES */}
                         <div className="2xl:col-span-4 xl:col-span-4  col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(15); setVisible(true) }} src={png16} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(15); setVisible(true) }} src={png16} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         <div className="2xl:col-span-4 xl:col-span-4  col-span-8 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(16); setVisible(true) }} src={png17} className="cursor-pointer object-cover h-full " />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(16); setVisible(true) }} src={png17} className="cursor-pointer object-cover h-full " />
                         </div>
 
                         {/* TIZES */}
                         <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 2xl:row-span-2 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(18); setVisible(true) }} src={png19} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(18); setVisible(true) }} src={png19} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-3 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(17); setVisible(true) }} src={png18} className="cursor-pointer h-full w-full object-cover lg:object-left xl:object-center sm:object-left object-center" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(17); setVisible(true) }} src={png18} className="cursor-pointer h-full w-full object-cover lg:object-left xl:object-center sm:object-left object-center" />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
@@ -338,14 +335,14 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-5 xl:col-span-3 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(20); setVisible(true) }} src={png21} className="cursor-pointer object-cover h-full xl:object-left object-center" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(20); setVisible(true) }} src={png21} className="cursor-pointer object-cover h-full xl:object-left object-center" />
                         </div>
 
                         {/* TIZENEGYES */}
 
                         <div className="2xl:col-span-2 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
                             <div style={{ pointerEvents: "none" }} className="absolute h-full w-full shadow-innerShadow shadow-black"></div>
-                            <Image onClick={() => { setIndex(19); setVisible(true) }} src={png20} className="cursor-pointer h-full w-full object-cover" />
+                            <Image alt="Kép a játékból" onClick={() => { setIndex(19); setVisible(true) }} src={png20} className="cursor-pointer h-full w-full object-cover" />
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 lg:col-start-3 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
