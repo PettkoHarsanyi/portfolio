@@ -210,7 +210,7 @@ export default function Kartografusok() {
                         </div>
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-100 bg-sky-200 rounded-3xl flex flex-col justify-center p-5 shadow-card">
-                            <div className="2xl:text-lg italic text-xl sm:text-lg">{lang === "ENG" ? <p>Unfortunatelly, I can't host the game since I don't have the rights for that. The pictures show the content of the game. Some of my other projects, that are my own idea can be and are hosted.</p> : <p>Sajnos a játékot nem oszthatom meg, mert a szerzői jog a kiadót illeti, viszont itt van néhány kép a játékból. A többi projektemet, ami a saját ötletem volt, azokat megosztottam.</p>}</div>
+                            <div className="2xl:text-lg italic text-xl sm:text-lg">{lang === "ENG" ? <p>Unfortunatelly, I can&apos;t host the game since I don&apos;t have the rights for that. The pictures show the content of the game. Some of my other projects, that are my own idea can be and are hosted.</p> : <p>Sajnos a játékot nem oszthatom meg, mert a szerzői jog a kiadót illeti, viszont itt van néhány kép a játékból. A többi projektemet, ami a saját ötletem volt, azokat megosztottam.</p>}</div>
                         </div>
 
                         <div className="2xl:col-span-3 xl:col-span-2 lg:col-span-4 sm:col-span-4 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
@@ -303,7 +303,7 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
                             <div className="2xl:text-lg italic text-xl sm:text-lg">
-                                {lang === "ENG" ? <p>If we want to play with our friends, we'll need the room code after creating a room. SocketIO generates this code, and they can join our room by entering it. This is where we can chat.</p> : <p>Ha játszani szeretnénk a barátainkkal, akkor egy szoba létrehozása után a szobakódra lesz szükségük. Ezt a socketIO generálja. A kód beírásával csatlakozhatnak a szobánkba. Itt lehet chatelni.</p>}</div>
+                                {lang === "ENG" ? <p>If we want to play with our friends, we&apos;ll need the room code after creating a room. SocketIO generates this code, and they can join our room by entering it. This is where we can chat.</p> : <p>Ha játszani szeretnénk a barátainkkal, akkor egy szoba létrehozása után a szobakódra lesz szükségük. Ezt a socketIO generálja. A kód beírásával csatlakozhatnak a szobánkba. Itt lehet chatelni.</p>}</div>
                         </div>
 
                         {/* KILENCES */}
@@ -330,7 +330,7 @@ export default function Kartografusok() {
 
                         <div className="2xl:col-span-2 xl:col-span-3 lg:col-span-4 sm:col-span-4 col-span-8 dark:bg-orange-300 bg-sky-50 rounded-3xl flex flex-col justify-center p-5 shadow-card">
                             <div className="2xl:text-lg italic text-xl sm:text-lg">
-                                {lang === "ENG" ? <p>When the game starts, you can still use the chat. In the game you have to draw, use your Tetris skills and build. Don't forget that it's not frowned upon to outsmart your opponents a little.</p> : <p>Amint a játék elindult, továbbra is lehet chatelni. Rajzolni kell, tetrisezni és építgetni. Ne felejtsük el, hogy kicsit kiszúrni sem ítélendő az ellenfeleinkkel.</p>}</div>
+                                {lang === "ENG" ? <p>When the game starts, you can still use the chat. In the game you have to draw, use your Tetris skills and build. Don&apos;t forget that it&apos;s not frowned upon to outsmart your opponents a little.</p> : <p>Amint a játék elindult, továbbra is lehet chatelni. Rajzolni kell, tetrisezni és építgetni. Ne felejtsük el, hogy kicsit kiszúrni sem ítélendő az ellenfeleinkkel.</p>}</div>
                         </div>
 
                         <div className="2xl:col-span-5 xl:col-span-3 col-span-8 row-span-1 relative rounded-3xl overflow-hidden">
