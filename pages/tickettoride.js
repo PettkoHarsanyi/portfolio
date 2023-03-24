@@ -111,7 +111,7 @@ export default function Tickettoride() {
                         </div>
 
                         <div className="lg:col-span-3 md:col-span-5 md:col-start-3 sm:col-span-6 sm:col-start-2 col-span-8 h-[18rem]" >
-                            <Carousel wrapAround autoplay={true} autoplayInterval={3000} className="rounded-3xl h-[18rem]"
+                            <Carousel wrapAround className="rounded-3xl h-[18rem]"
                                 defaultControlsConfig={{
                                     pagingDotsStyle: {
                                         fill: "gray",
@@ -120,7 +120,8 @@ export default function Tickettoride() {
                                 }}
                                 afterSlide={(index) => makeOpal(index)}
                                 renderCenterRightControls={({ nextDisabled, nextSlide }) => (
-                                    <button onClick={nextSlide} disabled={nextDisabled}>
+                                    <button onClick={nextSlide} disabled={nextDisabled} className="text-white bg-black py-2 px-3 bg-opacity-60 rounded-l-2xl" style={{WebkitTapHighlightColor:"transparent"}}>
+                                        {lang==="ENG"?"Next":"Kövi"}
                                     </button>
                                 )}
                                 renderCenterLeftControls={({ previousDisabled, previousSlide }) => (
@@ -136,7 +137,7 @@ export default function Tickettoride() {
                                 )}
                             >
                                 <div className="relative">
-                                    <div className="opaltext show opaltext0 text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                    <div className="opaltext show opaltext0 rounded-3xl text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
                                         <p className="font-burtons text-white text-3xl">
 
                                             {lang === "ENG" ? "Watch the pictures: " : "Nézd meg a képeket: "}
@@ -146,10 +147,10 @@ export default function Tickettoride() {
                                             <button onClick={(e) => {e.stopPropagation(); setIndex(0); setVisible(true) }}>{lang === "ENG" ? "click" : "kattints"}</button>
                                         </div>
                                     </div>
-                                    <Image alt="Kép a játékból" src={viewer} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={viewer} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                                 <div className="relative">
-                                    <div className="opaltext opaltext1 text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                    <div className="opaltext opaltext1 rounded-3xl text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
                                         <p className="font-burtons text-white text-3xl">
                                             {lang === "ENG" ? "Try out the game: " : "Próbáld ki a játékot: "}
                                         </p>
@@ -157,10 +158,10 @@ export default function Tickettoride() {
                                             {lang === "ENG" ? <p>unavailable</p> : <p>nem elérhetö</p>}
                                         </div>
                                     </div>
-                                    <Image alt="Kép a játékból" priority src={jatek} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" priority src={jatek} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                                 <div className="relative">
-                                    <div className="opaltext opaltext2 text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                    <div className="opaltext opaltext2 rounded-3xl text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
                                         <p className="font-burtons text-white text-3xl lg:text-3xl md:text-xl ">
 
                                             {lang === "ENG" ? "Watch it on GitHub " : "Nézd meg GitHubon:"}
@@ -170,7 +171,7 @@ export default function Tickettoride() {
                                             <Link target="_blank" href="https://github.com/PettkoHarsanyi/tickettoride">{lang === "ENG" ? "click" : "kattints"}</Link>
                                         </div>
                                     </div>
-                                    <Image alt="Kép a játékból" src={github} className="h-[18rem] object-cover" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={github} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                             </Carousel>
                         </div>
