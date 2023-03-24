@@ -1,17 +1,12 @@
 import Head from 'next/head'
-import { BsArrowBarLeft, BsArrowLeftCircle, BsFillArrowLeftCircleFill, BsFillMoonFill, BsFillSunFill } from "react-icons/bs"
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs"
 import { AiFillLinkedin, AiFillFacebook, AiFillGithub } from "react-icons/ai"
 import Image from "next/image"
 import me from "../public/me.jpg"
-import design from "../public/design.png"
-import code from "../public/code.png"
-import consulting from "../public/consulting.png"
 import kuldoncok from "../public/kuldoncok.png"
 import kartografusok from "../public/kartografusok.png"
 import tickettoride from "../public/tickettoride.png"
 import manager from "../public/manager.png"
-import web5 from "../public/web5.png"
-import { useState } from 'react'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLang, isDark } from '../store/selector'
@@ -98,9 +93,9 @@ export default function Home() {
           </div>
           <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
             <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/kartografusok"><Image priority alt='Picture of the game "Cartographers"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={kartografusok} /></Link></div>
-            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><a href='https://people.inf.elte.hu/di2e6a/kuldoncok/index.html' target="_blank"><Image alt='Picture of the game "Kuldoncok"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={kuldoncok} /></a></div>
-            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Image alt='Picture of the game "Ticket To Ride"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={tickettoride} /></div>
-            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Image alt='Picture of the app "Manager"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={manager} /></div>
+            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/tickettoride"><Image alt='Picture of the game "Ticket To Ride"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={tickettoride} /></Link></div>
+            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/kuldoncok"><Image alt='Picture of the game "Kuldoncok"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={kuldoncok} /></Link></div>
+            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/manager"><Image alt='Picture of the app "Manager"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={manager} /></Link></div>
           </div>
         </section>
       </main>
