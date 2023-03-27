@@ -160,7 +160,7 @@ export default function Kartografusok() {
 
                                         </p>
                                         <div className="text-2xl md:text-xl lg:text-2xl font-burtons cursor-pointer bg-green-600 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
-                                            {lang === "ENG" ? <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx" >download</a> : <a download="dokumentacio.docx" href="kartografusok/dokumentacio.docx">letöltés</a>}
+                                            {lang === "ENG" ? <a download="dokumentacio.docx" href="dokumentacio.docx" >download</a> : <a download="dokumentacio.docx" href="dokumentacio.docx">letöltés</a>}
                                         </div>
                                     </div>
                                     <Image alt="Kép a játékból" src={dokumentacio} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
