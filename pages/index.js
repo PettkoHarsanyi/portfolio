@@ -69,7 +69,7 @@ export default function Home() {
               {lang === "ENG" ?
                 "I just completed my bachelor's degree at Eötvös Lóránd University, where I studied as a software developer. My strength is building applications on the web. I'm a visual one, so I prefer front-end, but in general I am not afraid of back-end or full-stack works either."
                 :
-                "Egy friss BSc diplomás fejlesztő vagyok, aki szoftverfejlesztőként tanult az egyetemen. Az erősségeim közé tartozik webes alkalmazások fejlesztése. Vizuális típus vagyok, tehát a front-end felé hajlok, de nem ijedek meg sem back-end, sem a full-stack projectekben való részvételtől sem."
+                "Egy friss BSc diplomás fejlesztő vagyok, aki szoftverfejlesztőként tanult az egyetemen. Az erősségeim közé tartozik webes alkalmazások fejlesztése. Vizuális típus vagyok, tehát a front-end felé hajlok, de nem ijedek meg sem back-end, sem full-stack projectekben való részvételtől sem."
               }
             </p>
           </div>
