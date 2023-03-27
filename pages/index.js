@@ -47,7 +47,7 @@ export default function Home() {
 
 
                 {lang === "ENG" ?
-                  <HU title='Váltás magyarra' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
+                  <HU title='Váltás magyarra' className='h-7 ml-8 cursor-pointer border-2 border-black ' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
                   :
                   <GB title='Change to english' className='h-7 ml-8 cursor-pointer border-2 border-black' onClick={() => dispatch({ type: "CHANGE_LANGUAGE" })} />
                 }
