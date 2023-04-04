@@ -158,7 +158,7 @@ export default function Bubbs() {
                                             {lang === "ENG" ? "(70 MB - takes some time)" : "(70 MB - idöt igényel)"}
                                         </p>
                                         <div className="text-2xl font-burtons cursor-not-allowed bg-green-700 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
-                                            {lang === "ENG" ? <a href='https://ikelte-my.sharepoint.com/:f:/g/personal/di2e6a_inf_elte_hu/En3KG3C3MshCqTOvd4ccPswBASPHRbOpvQAbgz12BEYdQQ?e=d5YNN7' target="_blank">Download</a> : <a href='https://ikelte-my.sharepoint.com/:f:/g/personal/di2e6a_inf_elte_hu/En3KG3C3MshCqTOvd4ccPswBASPHRbOpvQAbgz12BEYdQQ?e=d5YNN7' target="_blank" >Letöltés</a>}
+                                            {lang === "ENG" ? <a href='/api/covidampark/covidampark' target="_blank">Download</a> : <a href='/api/covidampark/covidampark' target="_blank" >Letöltés</a>}
                                         </div>
                                     </div>
                                     <Image alt="Kép a játékból" priority src={download} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
