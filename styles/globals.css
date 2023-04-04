@@ -51,6 +51,16 @@ a {
   opacity: 0;
   transition: all 0.5s;
 }
+
+.opaltext3{
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.opaltext4{
+  opacity: 0;
+  transition: all 0.5s;
+}
 /*
 .slide-visible.slide-current .opaltext{
   opacity: 1;

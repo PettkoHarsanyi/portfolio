@@ -23,6 +23,7 @@ import png14 from "../public/kartografusok/14.png"
 import png15 from "../public/kartografusok/15.png"
 import png16 from "../public/kartografusok/16.png"
 import png17 from "../public/kartografusok/17.png"
+import github from "../public/tickettoride/github.png"
 import png18 from "../public/kartografusok/18.png"
 import png19 from "../public/kartografusok/19.png"
 import png20 from "../public/kartografusok/20.png"
@@ -43,7 +44,7 @@ export default function Kartografusok() {
 
     const router = useRouter();
     const publicUrl = router.basePath;
-    
+
     console.log(publicUrl);
 
     const [isVisible, setVisible] = useState(false);
@@ -69,8 +70,8 @@ export default function Kartografusok() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className='dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-500 px-10 md:px-20 lg:px-30 bg-gradient-to-b from-gray-300 to-gray-100'>
-                <section className='min-h-screen'>
+            <main className='dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-500 px-10 md:px-20 lg:px-30 bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center'>
+                <section className='min-h-screen max-w-[1760px]'>
                     <nav className='py-10 mb-8 flex justify-between'>
                         <div className='flex gap-10'>
                             <Link href="/">
@@ -102,11 +103,11 @@ export default function Kartografusok() {
 
                     <PhotoSlider
                         images={[
-                        "kartografusok/1.png", "kartografusok/17.png", "kartografusok/2.png", "kartografusok/19.png", "kartografusok/14.png", 
-                        "kartografusok/4png", "kartografusok/5.png", "kartografusok/8.png", "kartografusok/7.png", "kartografusok/9.png", 
-                        "kartografusok/10.png", "kartografusok/3.png", "kartografusok/6.png", "kartografusok/11.png", "kartografusok/12.png", 
-                        "kartografusok/13.png", "kartografusok/15.png", "kartografusok/16.png", "kartografusok/17.png", "kartografusok/19.png", 
-                        "kartografusok/18.png", "kartografusok/21.png", "kartografusok/20.png", ].map((item) => ({ src: item, key: item }))}
+                            "kartografusok/1.png", "kartografusok/17.png", "kartografusok/2.png", "kartografusok/19.png", "kartografusok/14.png",
+                            "kartografusok/4.png", "kartografusok/5.png", "kartografusok/8.png", "kartografusok/7.png", "kartografusok/9.png",
+                            "kartografusok/10.png", "kartografusok/3.png", "kartografusok/6.png", "kartografusok/11.png", "kartografusok/12.png",
+                            "kartografusok/13.png", "kartografusok/15.png", "kartografusok/16.png", "kartografusok/17.png", "kartografusok/19.png",
+                            "kartografusok/18.png", "kartografusok/21.png", "kartografusok/20.png",].map((item) => ({ src: item, key: item }))}
                         visible={isVisible}
                         onClose={() => setVisible(false)}
                         index={index}
@@ -117,11 +118,11 @@ export default function Kartografusok() {
                     <div className="grid grid-cols-8 grid-rows-1 pb-10 center mx-auto gap-10 lg:w-9/12 w-11/12 center">
                         <div className="lg:col-span-5 md:col-span-10 sm:col-span-8 col-span-8 h-[18rem] dark:bg-orange-50 bg-sky-300 rounded-3xl p-10 flex flex-col justify-center shadow-card">
                             <h3 className="text-2xl md:text-2xl mb-5 lg:text-2xl text-gray-800 font-burtons">Kartográfusok</h3>
-                            {lang === "ENG" ? <p className="text-base sm:text-xl md:text-xl">I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in NestJs, my frontend which is ReactJs, and SocketIO.</p>: <p className="text-sm sm:text-xl md:text-lg lg:text-base xl:text-xl">Ezt a projektet az egyetemen, szakmai dolgozatként csináltam. Az alkalmazás három részre oszlik, front-enden ReactJs működik, back-enden NestJs, a kapcsolatért pedig SocketIO felel. A grafikai elemeket (kártyák, térkép) nem én hoztam létre, viszont minden más a saját munkám.</p>}
+                            {lang === "ENG" ? <p className="text-base sm:text-xl md:text-xl">I made this as my university thesis. Three program components work together to make this application work; backend that I wrote in NestJs, my frontend which is ReactJs, and SocketIO.</p> : <p className="text-sm sm:text-xl md:text-lg lg:text-base xl:text-xl">Ezt a projektet az egyetemen, szakdolgozatként csináltam. Az alkalmazás három részre oszlik, front-enden ReactJs működik, back-enden NestJs, a kapcsolatért pedig SocketIO felel. A grafikai elemeket (kártyák, térkép) nem én hoztam létre, viszont minden más a saját munkám.</p>}
                         </div>
 
                         <div className="lg:col-span-3 md:col-span-5 md:col-start-3 sm:col-span-6 sm:col-start-2 col-span-8 h-[18rem]" >
-                            <Carousel wrapAround className="rounded-3xl h-[18rem]"
+                            <Carousel wrapAround className="rounded-3xl h-[18rem] shadow-card bg-black bg-opacity-60"
                                 defaultControlsConfig={{
                                     pagingDotsStyle: {
                                         fill: "gray",
@@ -130,8 +131,8 @@ export default function Kartografusok() {
                                 }}
                                 afterSlide={(index) => makeOpal(index)}
                                 renderCenterRightControls={({ nextDisabled, nextSlide }) => (
-                                    <button onClick={nextSlide} disabled={nextDisabled} className="text-white bg-black py-2 px-3 bg-opacity-60 rounded-l-2xl" style={{WebkitTapHighlightColor:"transparent"}}>
-                                        {lang==="ENG"?"Next":"Kövi"}
+                                    <button onClick={nextSlide} disabled={nextDisabled} className="text-white bg-black py-2 px-3 bg-opacity-60 rounded-l-2xl" style={{ WebkitTapHighlightColor: "transparent" }}>
+                                        {lang === "ENG" ? "Next" : "Kövi"}
                                     </button>
                                 )}
                                 renderCenterLeftControls={({ previousDisabled, previousSlide }) => (
@@ -143,22 +144,38 @@ export default function Kartografusok() {
                                         <button onClick={() => goToSlide(0)}>{currentSlide === 0 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
                                         <button onClick={() => goToSlide(1)}>{currentSlide === 1 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
                                         <button onClick={() => goToSlide(2)}>{currentSlide === 2 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
+                                        <button onClick={() => goToSlide(3)}>{currentSlide === 3 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
+                                        <button onClick={() => goToSlide(4)}>{currentSlide === 4 ? <RxDotFilled className="text-3xl" /> : <RxDot className="text-3xl" />}</button>
                                     </div>
                                 )}
                             >
                                 <div className="relative">
-                                    <div className="opaltext show opaltext0 text-center absolute h-full w-full flex flex-col rounded-3xl justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                    <div className="opaltext show opaltext0 text-center absolute h-full w-full rounded-3xl flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
                                         <p className="font-burtons text-white text-3xl">
-                                            {lang === "ENG" ? "Try out the game: " : "Próbáld ki a játékot: "}
+
+                                            {lang === "ENG" ? "Watch the pictures: " : "Nézd meg a képeket: "}
+
                                         </p>
-                                        <div className="text-2xl font-burtons cursor-not-allowed bg-red-700 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-red-200">
-                                            {lang === "ENG" ? <p>unavailable</p> : <p>nem elérhetö</p>}
+                                        <div className="text-2xl font-burtons cursor-pointer bg-gray-400 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
+                                            {lang === "ENG" ? <button onClick={() => { setIndex(0); setVisible(true) }}>click</button> : <button onClick={() => { setIndex(0); setVisible(true) }}>kattints</button>}
                                         </div>
                                     </div>
-                                    <Image alt="Kép a játékból" priority src={jatek} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={viewer} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
+                                </div>
+                                
+                                <div className="relative h-full">
+
+                                    <div className="h-full dark:bg-orange-50 bg-sky-300 rounded-3xl p-10 flex flex-col">
+                                        <h1 className="font-burtons                                     text-2xl   md:text-xl     lg:text-xl xl:text-2xl mb-5 absolute">{lang==="ENG"?"Informations":"Infók"}</h1>
+                                        <div className="h-max flex flex-col justify-center flex-1 gap-2 text-base  md:text-base   lg:text-sm xl:text-lg lg:pr-0 xl:pr-6 pr-6">
+                                            {lang==="ENG"?<p><b>Responsivity:</b> ❌ (only recommended for pc) </p>:<p><b>Reszponzivitás:</b> ❌ (a játék számítógépen ajánlott) </p>}
+                                            {lang==="ENG"?<p><b>Language:</b> <HU className="h-4 inline border-2 border-black"></HU> the game is hungarian only</p>:<p><b>Nyelv:</b> <HU className="h-4 inline border-2 border-black"></HU> a játék nyelve magyar</p>}
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="relative">
-                                    <div className="opaltext opaltext1 text-center absolute h-full w-full flex rounded-3xl flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                    <div className="opaltext opaltext2 text-center absolute h-full w-full flex rounded-3xl flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
                                         <p className="font-burtons text-white text-3xl lg:text-3xl md:text-xl ">
 
                                             {lang === "ENG" ? "Download the documentation: " : "Töltsd le a dokumentációt:"}
@@ -171,17 +188,28 @@ export default function Kartografusok() {
                                     <Image alt="Kép a játékból" src={dokumentacio} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                                 <div className="relative">
-                                    <div className="opaltext opaltext2 text-center absolute h-full w-full rounded-3xl flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
-                                        <p className="font-burtons text-white text-3xl">
+                                    <div className="opaltext opaltext3 rounded-3xl text-center absolute h-full w-full flex flex-col justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                        <p className="font-burtons text-white text-3xl lg:text-3xl md:text-xl ">
 
-                                            {lang === "ENG" ? "Watch the pictures: " : "Nézd meg a képeket: "}
+                                            {lang === "ENG" ? "Watch it on GitHub " : "Nézd meg GitHubon:"}
 
                                         </p>
                                         <div className="text-2xl font-burtons cursor-pointer bg-gray-400 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-white">
-                                            {lang === "ENG" ? <button onClick={() => {setIndex(0);setVisible(true)}}>click</button> : <button onClick={() => {setIndex(0);setVisible(true)}}>kattints</button>}
+                                            <Link target="_blank" href="https://github.com/PettkoHarsanyi/kartografusok">{lang === "ENG" ? "click" : "kattints"}</Link>
                                         </div>
                                     </div>
-                                    <Image alt="Kép a játékból" src={viewer} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
+                                    <Image alt="Kép a játékból" src={github} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
+                                </div>
+                                <div className="relative">
+                                    <div className="opaltext opaltext4 text-center absolute h-full w-full flex flex-col rounded-3xl justify-center items-center p-8 bg-black bg-opacity-60 gap-10">
+                                        <p className="font-burtons text-white text-3xl">
+                                            {lang === "ENG" ? "Try out the game: " : "Próbáld ki a játékot: "}
+                                        </p>
+                                        <div className="text-2xl font-burtons cursor-not-allowed bg-red-700 px-4 py-1 rounded-xl shadow-card shadow-black border-2 border-black text-red-200">
+                                            {lang === "ENG" ? <p>unavailable</p> : <p>nem elérhetö</p>}
+                                        </div>
+                                    </div>
+                                    <Image alt="Kép a játékból" priority src={jatek} className="h-[18rem] object-cover rounded-3xl" style={{ pointerEvents: "none" }} draggable={false} />
                                 </div>
                             </Carousel>
                         </div>

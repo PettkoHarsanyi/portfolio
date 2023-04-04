@@ -7,6 +7,8 @@ import kuldoncok from "../public/kuldoncok.png"
 import kartografusok from "../public/kartografusok.png"
 import tickettoride from "../public/tickettoride.png"
 import manager from "../public/manager.png"
+import bubbs from "../public/bubbs.png"
+import covidampark from "../public/covidampark.png"
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLang, isDark } from '../store/selector'
@@ -26,8 +28,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-500 px-10 md:px-20 lg:px-30 bg-gradient-to-b from-gray-300 to-gray-100'>
-        <section className='min-h-screen'>
+      <main className='dark:bg-gradient-to-b dark:from-gray-800 dark:to-gray-500 px-10 md:px-20 lg:px-30 bg-gradient-to-b from-gray-300 to-gray-100 flex flex-col items-center'>
+        <section className='w-full max-w-[1760px]'>
           <nav className='py-10 mb-8 flex justify-between'>
             <h1 className='text-lg md:text-xl lg:text-2xl dark:text-white font-burtons text-gray-800'>hp</h1>
             <ul className='flex items-center'>
@@ -73,7 +75,7 @@ export default function Home() {
               }
             </p>
           </div>
-          <div className='text-5xl flex justify-center gap-16 py-3 dark:text-gray-600'>
+          <div className='text-5xl flex justify-center gap-4 lg:gap-16 py-3 dark:text-gray-600'>
             <a href='https://www.facebook.com/nevessmertazjo/' target="_blank">
               <AiFillFacebook className='dark:text-orange-400 text-sky-900' />
             </a>
@@ -83,10 +85,11 @@ export default function Home() {
             <a href='https://github.com/PettkoHarsanyi' target="_blank">
               <AiFillGithub className='dark:text-orange-400 text-sky-900' />
             </a>
+            <a href='/about' className='flex flex-col align-middle justify-center'><div className='font-burtons dark:text-orange-400 text-sky-900 border-2 text-sm p-1 dark:border-orange-400 border-sky-900 rounded-md text-center'>{lang=="ENG"?"ABOUT ME":"RÓLAM"}</div></a>
           </div>
         </section>
 
-        <section>
+        <section className='max-w-[1760px]'>
           <div>
             <h3 className='text-2xl lg:text-3xl pt-10 dark:text-gray-300'>Portfolio</h3>
             <p className='text-xl md:text-2xl py-2 leading-8 dark:text-gray-400'>{lang === "ENG" ? "Here are some of my projects that I've built myself during university studies." : "Néhány projectem, amit az egyetemi tanulmányaim alatt készítettem el."}</p>
@@ -96,6 +99,8 @@ export default function Home() {
             <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/tickettoride"><Image alt='Picture of the game "Ticket To Ride"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={tickettoride} /></Link></div>
             <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/kuldoncok"><Image alt='Picture of the game "Kuldoncok"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={kuldoncok} /></Link></div>
             <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/manager"><Image alt='Picture of the app "Manager"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={manager} /></Link></div>
+            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/bubbs"><Image alt='Picture of the app "Bubbs"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={bubbs} /></Link></div>
+            <div className='cards basis-1/3 flex-1 cursor-pointer shadow-card dark:hover:shadow-hoveredCardDark hover:shadow-hoveredCardLight rounded-lg'><Link href="/covidampark"><Image alt='Picture of the app "Bubbs"' className='rounded-lg object-contain' width={"100%"} height={"100%"} src={covidampark} /></Link></div>
           </div>
         </section>
       </main>
