@@ -1,38 +1,33 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill, BsFullscreenExit, BsThreeDots } from "react-icons/bs";
-import { RxDot, RxDotFilled } from "react-icons/rx";
+import { BsArrowLeftCircle, BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { getLang, isDark } from "../store/selector";
 import { HU, GB } from 'country-flag-icons/react/3x2'
 import Image from "next/image"
-import jatek from "../public/tickettoride/jatek.png"
-import viewer from "../public/tickettoride/viewer.png"
-import github from "../public/tickettoride/github.png"
-import Carousel from "nuka-carousel/lib/carousel";
-import pic1 from "../public/aboutme/1.JPG"
-import pic1_2 from "../public/aboutme/1_2.JPG"
-import pic3 from "../public/aboutme/3.JPG"
-import pic2 from "../public/aboutme/2.jpeg"
-import pic4 from "../public/aboutme/4.JPG"
-import pic5 from "../public/aboutme/5.jpeg"
-import pic6 from "../public/aboutme/6.jpeg"
-import pic7 from "../public/aboutme/7.jpg"
-import pic8 from "../public/aboutme/8.JPEG"
-import pic9 from "../public/aboutme/9.JPG"
-import pic10 from "../public/aboutme/10.JPG"
-import pic11 from "../public/aboutme/11.jpeg"
-import pic12 from "../public/aboutme/12.jpeg"
-import pic13 from "../public/aboutme/13.jpeg"
-import pic4_2 from "../public/aboutme/4_2.JPG"
-import pic14 from "../public/aboutme/14.JPEG"
-import pic15 from "../public/aboutme/15.jpeg"
-import pic16 from "../public/aboutme/16.jpeg"
-import pic17 from "../public/aboutme/17.JPEG"
-import pic18 from "../public/aboutme/18.jpeg"
-import pic19 from "../public/aboutme/19.jpeg"
-import pic20 from "../public/aboutme/20.jpeg"
+import pic1 from "../public/aboutme/1.png"
+import pic1_2 from "../public/aboutme/1_2.png"
+import pic3 from "../public/aboutme/3.png"
+import pic2 from "../public/aboutme/2.png"
+import pic4 from "../public/aboutme/4.png"
+import pic5 from "../public/aboutme/5.png"
+import pic6 from "../public/aboutme/6.png"
+import pic7 from "../public/aboutme/7.png"
+import pic8 from "../public/aboutme/8.png"
+import pic9 from "../public/aboutme/9.png"
+import pic10 from "../public/aboutme/10.png"
+import pic11 from "../public/aboutme/11.png"
+import pic12 from "../public/aboutme/12.png"
+import pic13 from "../public/aboutme/13.png"
+import pic4_2 from "../public/aboutme/4_2.png"
+import pic14 from "../public/aboutme/14.png"
+import pic15 from "../public/aboutme/15.png"
+import pic16 from "../public/aboutme/16.png"
+import pic17 from "../public/aboutme/17.png"
+import pic18 from "../public/aboutme/18.png"
+import pic19 from "../public/aboutme/19.png"
+import pic20 from "../public/aboutme/20.png"
 
 import { PhotoProvider, PhotoSlider, PhotoView } from "react-photo-view";
 import 'react-photo-view/dist/react-photo-view.css';
@@ -100,7 +95,7 @@ export default function About() {
                     <PhotoProvider>
                         <div className="grid grid-cols-8 grid-rows-1 pb-10 center gap-10 w-full center dark:text-orange-100 text-[#18181f] lg:text-3xl sm:text-xl md:text-2xl text-base">
                             <div className="xl:col-span-4 order-1 xl:order-1 col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src={darkMode?"/aboutme/1_2.JPG":"/aboutme/1.JPG"}>
+                                <PhotoView src={darkMode?"aboutme/1_2.png":"aboutme/1.png"}>
                                     {darkMode ?
                                         <Image alt="Kép a játékból" onClick={() => { setIndex(0); setVisible(true) }} src={pic1_2} className="cursor-pointer object-cover z-0 h-full" />
                                         :
@@ -114,7 +109,7 @@ export default function About() {
                             </div>
 
                             <div className="xl:col-span-4 order-3 xl:order-4 col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/2.jpeg">
+                                <PhotoView src="aboutme/2.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(1); setVisible(true) }} src={pic2} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -123,7 +118,7 @@ export default function About() {
                             </div>
 
                             <div className="order-5 xl:order-5 xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/3.JPG">
+                                <PhotoView src="aboutme/3.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(2); setVisible(true) }} src={pic3} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -132,19 +127,19 @@ export default function About() {
                             </div>
 
                             <div className="order-7 xl:order-7 xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/4.JPG">
+                                <PhotoView src="aboutme/4.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(3); setVisible(true) }} src={pic4} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-8 xl:order-8 xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/4_2.JPG">
+                                <PhotoView src="aboutme/4_2.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(4); setVisible(true) }} src={pic4_2} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-10 xl:order-10 xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/5.jpeg">
+                                <PhotoView src="aboutme/5.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(5); setVisible(true) }} src={pic5} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -153,7 +148,7 @@ export default function About() {
                             </div>
 
                             <div className="order-11 xl:order-11 xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/6.jpeg">
+                                <PhotoView src="aboutme/6.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(6); setVisible(true) }} src={pic6} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -162,43 +157,43 @@ export default function About() {
                             </div>
 
                             <div className="order-[13] xl:order-[13] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/7.jpg">
+                                <PhotoView src="aboutme/7.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(7); setVisible(true) }} src={pic7} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[14] xl:order-[14] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/8.JPEG">
+                                <PhotoView src="aboutme/8.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(8); setVisible(true) }} src={pic8} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[14] xl:order-[14] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/9.JPG">
+                                <PhotoView src="aboutme/9.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(9); setVisible(true) }} src={pic9} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[15] xl:order-[15] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/10.JPG">
+                                <PhotoView src="aboutme/10.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(10); setVisible(true) }} src={pic10} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[16] xl:order-[16] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/11.jpeg">
+                                <PhotoView src="aboutme/11.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(11); setVisible(true) }} src={pic11} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[17] xl:order-[17] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/12.jpeg">
+                                <PhotoView src="aboutme/12.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(12); setVisible(true) }} src={pic12} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[19] xl:order-[18] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/13.jpeg">
+                                <PhotoView src="aboutme/13.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(13); setVisible(true) }} src={pic13} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -207,7 +202,7 @@ export default function About() {
                             </div>
 
                             <div className="order-[20] xl:order-[21] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/14.JPEG">
+                                <PhotoView src="aboutme/14.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(14); setVisible(true) }} src={pic14} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
@@ -216,39 +211,39 @@ export default function About() {
                             </div>
 
                             <div className="order-[22] xl:order-[22] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/15.jpeg">
+                                <PhotoView src="aboutme/15.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(15); setVisible(true) }} src={pic15} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[23] xl:order-[23] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/16.jpeg">
+                                <PhotoView src="aboutme/16.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(16); setVisible(true) }} src={pic16} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
 
                             <div className="order-[24] xl:order-[24] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/17.JPEG">
+                                <PhotoView src="aboutme/17.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(17); setVisible(true) }} src={pic17} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
 
                             <div className="order-[25] xl:order-[25] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/18.jpeg">
+                                <PhotoView src="aboutme/18.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(18); setVisible(true) }} src={pic18} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[26] xl:order-[26] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/19.jpeg">
+                                <PhotoView src="aboutme/19.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(19); setVisible(true) }} src={pic19} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
 
                             <div className="order-[27] xl:order-[27] xl:col-span-4  col-span-8 sm:col-start-2 sm:col-span-6 rounded-xl overflow-hidden shadow-card shadow-black flex flex-col align-middle justify-center">
-                                <PhotoView src="aboutme/20.jpeg">
+                                <PhotoView src="aboutme/20.png">
                                     <Image alt="Kép a játékból" onClick={() => { setIndex(20); setVisible(true) }} src={pic20} className="cursor-pointer object-cover z-0 h-full" />
                                 </PhotoView>
                             </div>
