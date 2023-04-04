@@ -69,9 +69,9 @@ export default function Home() {
             <h3 className='text-2xl lg:text-3xl py-2 dark:text-gray-300 text-gray-800'>{lang === "ENG" ? "Software developer." : "Szoftverfejlesztő"}</h3>
             <p className='text-xl md:text-2xl py-5 leading-8 dark:text-gray-400  max-w-lg mx-auto text-gray-700'>
               {lang === "ENG" ?
-                "I just completed my bachelor's degree at Eötvös Lóránd University, where I studied as a software developer. My strength is building applications on the web. I'm a visual one, so I prefer front-end, but in general I am not afraid of back-end or full-stack works either."
+                "I just completed my bachelor's degree at Eötvös Lóránd University, where I studied as a software developer. My strength is building applications on the web. I'm a visual and creative one, so I prefer front-end, but in general I am not afraid of back-end or full-stack works either."
                 :
-                "Egy friss BSc diplomás fejlesztő vagyok, aki szoftverfejlesztőként tanult az egyetemen. Az erősségeim közé tartozik webes alkalmazások fejlesztése. Vizuális típus vagyok, tehát a front-end felé hajlok, de nem ijedek meg sem back-end, sem full-stack projectekben való részvételtől sem."
+                "Egy friss BSc diplomás fejlesztő vagyok, aki szoftverfejlesztőként tanult az egyetemen. Az erősségeim közé tartozik webes alkalmazások fejlesztése. Vizuális és kreatív típus vagyok, tehát a front-end felé hajlok, de nem ijedek meg sem back-end, sem full-stack projectekben való részvételtől sem."
               }
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
             <a href='https://github.com/PettkoHarsanyi' target="_blank">
               <AiFillGithub className='dark:text-orange-400 text-sky-900' />
             </a>
-            <a href='/about' className='flex flex-col align-middle justify-center'><div className='font-burtons dark:text-orange-400 text-sky-900 border-2 text-sm p-1 dark:border-orange-400 border-sky-900 rounded-md text-center'>{lang=="ENG"?"ABOUT ME":"RÓLAM"}</div></a>
+            <Link href='/about' className='flex flex-col align-middle justify-center'><div className='font-burtons dark:text-orange-400 text-sky-900 border-2 text-sm p-1 dark:border-orange-400 border-sky-900 rounded-md text-center'>{lang=="ENG"?"ABOUT ME":"RÓLAM"}</div></Link>
           </div>
         </section>
 

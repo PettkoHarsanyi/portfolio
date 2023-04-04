@@ -95,3 +95,21 @@ a {
     opacity: 1;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #333;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background: #555;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: #333;
+}
