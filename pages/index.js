@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs"
 import { AiFillLinkedin, AiFillFacebook, AiFillGithub } from "react-icons/ai"
 import Image from "next/image"
-import me from "../public/me.jpg"
+import me from "../public/me.png"
 import kuldoncok from "../public/kuldoncok.png"
 import kartografusok from "../public/kartografusok.png"
 import tickettoride from "../public/tickettoride.png"
